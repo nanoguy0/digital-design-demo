@@ -38,9 +38,9 @@ const BinaryBaseVisualizer = ({...props}) => {
 
     return (
         <>
-            <h3 style={{ width: '100%', textAlign: 'center' }} ref={parentRefAnimate}>
+            <h3 style={{ width: '100%', overflow:'hidden',textAlign: 'center' }} ref={parentRefAnimate}>
                 <div style={{ display: 'inline-block', marginRight: '0.2em' }}>{currentIncrement}</div> {currentIncrement == 0 ? null : <div style={{ display: 'inline-block', marginRight: '0.2em' }}>=</div>} {
-                    exponentView.map(([digit, exponent], i, l) => (<div style={{ display: 'inline-block', marginRight: '0.5em' }} key={exponent}>{digit}⋅{baseSystem}<sup>{exponent + 1}</sup> {(l.length - 1) == i ? '' : '+'} </div>))
+                    exponentView.map(([digit, exponent], i, l) => (<div style={{ display: 'inline-block', marginRight: '0.5em' }} key={exponent}>{digit}⋅<div style={{display:'inline-block', color:'gray'}}>{baseSystem}<sup>{exponent + 1}</sup></div> {(l.length - 1) == i ? '' : '+'} </div>))
                 }</h3 >
             <div style={{ position: 'absolute', marginTop: '8em' }} >
                 <Button onClick={() => setBaseSystem(Number.parseInt(prompt("Please enter a number.") || '') || 10)} style={{ margin: 10 }} variant="secondary">Change Base</Button>
