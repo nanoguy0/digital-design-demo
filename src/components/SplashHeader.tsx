@@ -35,7 +35,7 @@ export default ({ ...props }) => {
                     >Digital Design In 100 Seconds<motion.h6
                         initial={{ opacity: 0, x: -35 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.5 }} style={{ textAlign: 'right', color: 'lightgray', marginTop: 10 }}>Version v0.1.2 (ALPHA)</motion.h6>
+                        transition={{ delay: 0.5 }} style={{ textAlign: 'right', color: 'lightgray', marginTop: 10 }}>Version v0.1.3 (ALPHA)</motion.h6>
                         </motion.h1>
 
                 </Col>
