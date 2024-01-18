@@ -1,7 +1,20 @@
 {
   "files": {
     "main.css": "/digital-design-demo/static/css/main.34f3dc5b.css",
-    "main.js": "/digital-design-demo/static/js/main.f3ba237e.js",
+    "main.js": "/digital-design-demo/static/js/main.737d5e49.js",
+    "reactPlayerYouTube.js": "/digital-design-demo/static/js/reactPlayerYouTube.b3777e96.chunk.js",
+    "reactPlayerSoundCloud.js": "/digital-design-demo/static/js/reactPlayerSoundCloud.ea313d7b.chunk.js",
+    "reactPlayerVimeo.js": "/digital-design-demo/static/js/reactPlayerVimeo.9d8dbe95.chunk.js",
+    "reactPlayerFacebook.js": "/digital-design-demo/static/js/reactPlayerFacebook.4c0e8d57.chunk.js",
+    "reactPlayerStreamable.js": "/digital-design-demo/static/js/reactPlayerStreamable.5164c21c.chunk.js",
+    "reactPlayerWistia.js": "/digital-design-demo/static/js/reactPlayerWistia.4ef8b0eb.chunk.js",
+    "reactPlayerTwitch.js": "/digital-design-demo/static/js/reactPlayerTwitch.3ad3add1.chunk.js",
+    "reactPlayerDailyMotion.js": "/digital-design-demo/static/js/reactPlayerDailyMotion.55bf0bcc.chunk.js",
+    "reactPlayerMixcloud.js": "/digital-design-demo/static/js/reactPlayerMixcloud.e767a5dd.chunk.js",
+    "reactPlayerVidyard.js": "/digital-design-demo/static/js/reactPlayerVidyard.95c581c3.chunk.js",
+    "reactPlayerKaltura.js": "/digital-design-demo/static/js/reactPlayerKaltura.2e859237.chunk.js",
+    "reactPlayerFilePlayer.js": "/digital-design-demo/static/js/reactPlayerFilePlayer.011c2069.chunk.js",
+    "reactPlayerPreview.js": "/digital-design-demo/static/js/reactPlayerPreview.900916b9.chunk.js",
     "static/js/787.fe6a1fb0.chunk.js": "/digital-design-demo/static/js/787.fe6a1fb0.chunk.js",
     "static/media/jetbrains-mono-latin-400-normal.woff": "/digital-design-demo/static/media/jetbrains-mono-latin-400-normal.c226d7283d0d52c2d32c.woff",
     "static/media/jetbrains-mono-latin-400-normal.woff2": "/digital-design-demo/static/media/jetbrains-mono-latin-400-normal.2fe080a3bf49bdc12fcb.woff2",
@@ -17,11 +30,24 @@
     "static/media/jetbrains-mono-cyrillic-ext-400-normal.woff2": "/digital-design-demo/static/media/jetbrains-mono-cyrillic-ext-400-normal.116395f5d16bf9918fd9.woff2",
     "index.html": "/digital-design-demo/index.html",
     "main.34f3dc5b.css.map": "/digital-design-demo/static/css/main.34f3dc5b.css.map",
-    "main.f3ba237e.js.map": "/digital-design-demo/static/js/main.f3ba237e.js.map",
+    "main.737d5e49.js.map": "/digital-design-demo/static/js/main.737d5e49.js.map",
+    "reactPlayerYouTube.b3777e96.chunk.js.map": "/digital-design-demo/static/js/reactPlayerYouTube.b3777e96.chunk.js.map",
+    "reactPlayerSoundCloud.ea313d7b.chunk.js.map": "/digital-design-demo/static/js/reactPlayerSoundCloud.ea313d7b.chunk.js.map",
+    "reactPlayerVimeo.9d8dbe95.chunk.js.map": "/digital-design-demo/static/js/reactPlayerVimeo.9d8dbe95.chunk.js.map",
+    "reactPlayerFacebook.4c0e8d57.chunk.js.map": "/digital-design-demo/static/js/reactPlayerFacebook.4c0e8d57.chunk.js.map",
+    "reactPlayerStreamable.5164c21c.chunk.js.map": "/digital-design-demo/static/js/reactPlayerStreamable.5164c21c.chunk.js.map",
+    "reactPlayerWistia.4ef8b0eb.chunk.js.map": "/digital-design-demo/static/js/reactPlayerWistia.4ef8b0eb.chunk.js.map",
+    "reactPlayerTwitch.3ad3add1.chunk.js.map": "/digital-design-demo/static/js/reactPlayerTwitch.3ad3add1.chunk.js.map",
+    "reactPlayerDailyMotion.55bf0bcc.chunk.js.map": "/digital-design-demo/static/js/reactPlayerDailyMotion.55bf0bcc.chunk.js.map",
+    "reactPlayerMixcloud.e767a5dd.chunk.js.map": "/digital-design-demo/static/js/reactPlayerMixcloud.e767a5dd.chunk.js.map",
+    "reactPlayerVidyard.95c581c3.chunk.js.map": "/digital-design-demo/static/js/reactPlayerVidyard.95c581c3.chunk.js.map",
+    "reactPlayerKaltura.2e859237.chunk.js.map": "/digital-design-demo/static/js/reactPlayerKaltura.2e859237.chunk.js.map",
+    "reactPlayerFilePlayer.011c2069.chunk.js.map": "/digital-design-demo/static/js/reactPlayerFilePlayer.011c2069.chunk.js.map",
+    "reactPlayerPreview.900916b9.chunk.js.map": "/digital-design-demo/static/js/reactPlayerPreview.900916b9.chunk.js.map",
     "787.fe6a1fb0.chunk.js.map": "/digital-design-demo/static/js/787.fe6a1fb0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.34f3dc5b.css",
-    "static/js/main.f3ba237e.js"
+    "static/js/main.737d5e49.js"
   ]
 }
