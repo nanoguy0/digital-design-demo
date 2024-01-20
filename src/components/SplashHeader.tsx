@@ -1,6 +1,5 @@
 import { motion, useScroll } from "framer-motion"
-import { useEffect, useState } from "react";
-import { Col, Container, Row, Tabs } from "react-bootstrap"
+import { Col, Container, Row } from "react-bootstrap"
 
 const NavBarMap = () => {
 

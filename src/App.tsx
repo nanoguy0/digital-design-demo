@@ -4,7 +4,6 @@ import { useSignalEffect, useSignals } from '@preact/signals-react/runtime';
 
 import SplashHeader from './components/SplashHeader';
 
-import { MarkDownCard, InfoCard } from './components/Cards';
 import Introduction from './sections/Introduction';
 import DecimalNumbers from './sections/DecimalNumbers';
 import { useRef } from 'react';
@@ -14,11 +13,6 @@ import SignedBinary from './sections/SignedBinary';
 import AdditionAndSubtraction from './sections/AdditionAndSubtraction';
 import OtherBinaryCodes from './sections/OtherBinaryCodes';
 import Ending from './sections/Ending';
-
-const testMarkdown = `## Understanding Number Bases
-- Binary means composed of two parts, only using digits 0 and 1.
-- Decimal numbers are more commonly used, composed of digits 0 through 9.
-- Counting with binary numbers, e.g., fingers on a hand without using number 5.`;
 
 
 function App() {
