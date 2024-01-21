@@ -28,5 +28,9 @@
 .animated-base-indicator {
     position: absolute;
     z-index: 99;
-    
+}
+
+.smooth-byte-counter {
+    /* this does nothing */
+    overflow: clip;
 }

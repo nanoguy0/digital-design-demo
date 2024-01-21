@@ -1,8 +1,8 @@
 import React, { useReducer, useState } from 'react';
 import { MotionProps, Variants, motion, animate } from 'framer-motion';
 
-import { Signal, signal } from '@preact/signals-react';
-import { useComputed, useSignal, useSignalEffect, useSignals } from '@preact/signals-react/runtime';
+import { Signal, useComputed, useSignalEffect, } from '@preact/signals-react';
+import { useSignal, useSignals } from '@preact/signals-react/runtime';
 import Binary from './Binary';
 import { Container } from 'react-bootstrap';
 
@@ -17,31 +17,29 @@ const variants: Variants = {
     'byte-visible': { opacity: 1 },
 };
 
-const SmoothValue = ({ value }: { value: Signal<Number> }) => {
-    const nodeRef = React.useRef<HTMLParagraphElement>(null);
-    useSignals();
+const SmoothValue = ({ value }: { value: Signal<number> }) => {
+    const [shownSignal, updateSignal] = useState(0);
+
     useSignalEffect(() => {
-        // TODO: This is bad, we should be using a signal for this somehow
-        const from = Number.parseInt(nodeRef.current?.textContent ?? '') || 0;
-        const controls = animate(from, value.value, {
+        // todo: i want to make this parallel so you can queue up multiple update ands it ramps up to the last one
+        const controls = animate(shownSignal, value.value, {
             duration: 0.25,
-            onUpdate: (v) => {
-                if (nodeRef.current)
-                    nodeRef.current.textContent = ' = ' + v.toFixed(0);
-            }
+            onUpdate: (v) => updateSignal(Math.round(v.valueOf())),
+            delay: 0.5,
         });
         return () => controls.stop();
     });
-    return <p className='smooth-counter' ref={nodeRef}></p>
+    return <p> = {shownSignal}</p>
 };
 
-const AnimatedBaseIndicator = ({ x, y, expo, neg }: {x:number, y:number, expo: number, neg: boolean}) => {
+const AnimatedBaseIndicator = ({ expo, neg, ...props }: { expo: number, neg: boolean} & MotionProps) => {
     
     return (<motion.p 
-        initial={{scale: 0, opacity: 0.75}}
-        animate={{scale: 2.5, y: -40, opacity: 0}}
-        transition={{duration: 2.5}}
-        className='animated-base-indicator'>{neg?'-':'+'}{expo == 0 ? '1' : <>2<sup>{expo}</sup></>}</motion.p>)
+        initial={{scale: 0, opacity: 0.75, y: 30, x: 100}}
+        animate={{scale: [null, 2.5, 2.5], y: [null, 0, 0], opacity: [null, 1, 0], x: [null, 100, 0]}}
+        transition={{duration: 1, times:[0, 0.2, 1], type: 'tween', ease: 'anticipate'}}
+        className='animated-base-indicator'
+        {...props}>{neg?'-':'+'}{expo == 0 ? '1' : <>2<sup>{expo}</sup></>}</motion.p>)
 }
 
 export default React.forwardRef<HTMLDivElement, ByteProps>(({ numberValue, motionProps, readonly, ...props }: ByteProps, ref) => {
@@ -54,8 +52,8 @@ export default React.forwardRef<HTMLDivElement, ByteProps>(({ numberValue, motio
         if (readonly) return;
         
         return (v: PointerEvent) => {
-            console.log(v); //!!!! I CANT FIGURE OUT WHY THIS ISNT WORKING, POSITIONS ARE ALL WRONG
-            setIndicators([...baseIndicators,<AnimatedBaseIndicator x={v.x} y={v.y} expo={7-i} neg={numberValue.value & (0b10000000 >> i) ? true : false} />])
+            // TODO: fix awful position hack
+            setIndicators([...baseIndicators,<AnimatedBaseIndicator expo={7-i} neg={numberValue.value & (0b10000000 >> i) ? true : false} style={{position:'absolute', marginLeft: '700px', marginTop:'20px'}}/>])
 
             numberValue.value ^= 0b10000000 >> i;
         }
@@ -65,7 +63,8 @@ export default React.forwardRef<HTMLDivElement, ByteProps>(({ numberValue, motio
     return (
         <>
             
-            {baseIndicators}
+            
+            
             <motion.div
                 ref={ref}
                 initial="byte-hidden"
@@ -75,10 +74,10 @@ export default React.forwardRef<HTMLDivElement, ByteProps>(({ numberValue, motio
                 variants={variants}
                 {...motionProps}
             >
-
-                {byteTable.value.map((bit, i) => <Binary state={bit} onTap={onClick(i)} readonly={readonly} stagger={i} />)}
+                {baseIndicators}
             { /* note: I hate this so much its not dynamic but im so hungry rn that ill fix it later  */}
-                <h1 style={{position:'absolute', marginLeft: '650px', marginTop:'20px'}}><SmoothValue value={numberValue} /></h1>
+                <h1 style={{position:'absolute', marginLeft: '650px', marginTop:'20px'}} className='smooth-byte-counter'><SmoothValue value={numberValue} /></h1>
+                {byteTable.value.map((bit, i) => <Binary state={bit} onTap={onClick(i)} readonly={readonly} stagger={i} />)}
             </motion.div>
             
         </>
