@@ -38,10 +38,10 @@ return (
           damping: 20
         }}
         whileHover={{ y:-10 }}
-        whileTap={{
-          scale: 0.95,
-          rotate: -1
-        }}
+        // whileTap={{
+        //   scale: 0.95,
+        //   rotate: -1
+        // }}
         {...motionProps}
       >
         <Card style={{ background: '#712cf926', padding:'2em' }} {...props}>
