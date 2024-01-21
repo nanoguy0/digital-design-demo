@@ -1,5 +1,5 @@
-import { motion, MotionProps, useInView } from "framer-motion"
-import { useEffect, useRef } from "react";
+import { motion, MotionProps } from "framer-motion"
+import { useRef } from "react";
 import ReactPlayer from 'react-player/file'
 
 const DEFAULT_VIDEO = `${process.env.PUBLIC_URL}/videos/default.mp4`;

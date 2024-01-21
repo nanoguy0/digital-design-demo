@@ -4,7 +4,7 @@ import './binary.css';
 
 export type BinaryProps = {
     state: boolean;
-    onClick?: () => void;
+    onTap?: (v: PointerEvent) => void;
     motionProps?: MotionProps;
     readonly?: boolean;
     stagger?: number;
@@ -19,7 +19,7 @@ const variants: Variants = {
     'byte-tap': { scale: 0.8, fontSize: 40 }
 };
 
-export default React.forwardRef<HTMLDivElement, BinaryProps>(({ state, motionProps, readonly, onClick, stagger, ...props }: BinaryProps, ref) => {
+export default React.forwardRef<HTMLDivElement, BinaryProps>(({ state, motionProps, readonly, onTap, stagger, ...props }: BinaryProps, ref) => {
     return (
         <motion.div
             className='binary-bit'
@@ -36,7 +36,7 @@ export default React.forwardRef<HTMLDivElement, BinaryProps>(({ state, motionPro
             whileTap={readonly ? undefined : "byte-tap"}
             transition={{ type: "spring", stiffness: 260, damping: 20}}
             ref={ref}
-            onTapStart={onClick}
+            onTapStart={onTap}
             variants={variants}
             {...motionProps}
             

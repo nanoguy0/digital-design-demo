@@ -25,6 +25,8 @@
     gap: 5px;
 }
 
-.binary-byte-counter {
+.animated-base-indicator {
+    position: absolute;
+    z-index: 99;
     
 }

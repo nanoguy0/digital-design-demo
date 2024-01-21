@@ -1,4 +1,4 @@
-import { Button, Col, Container, Row } from "react-bootstrap"
+import { Button, Container, Row } from "react-bootstrap"
 import React from "react";
 import CenteredRow from "./CenteredRow";
 

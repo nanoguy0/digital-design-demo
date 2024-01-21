@@ -1,6 +1,5 @@
 
-import { useSignal, signal } from '@preact/signals-react';
-import { useSignalEffect, useSignals } from '@preact/signals-react/runtime';
+import { useSignals } from '@preact/signals-react/runtime';
 
 import SplashHeader from './components/SplashHeader';
 
