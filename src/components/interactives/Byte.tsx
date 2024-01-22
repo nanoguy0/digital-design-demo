@@ -53,7 +53,7 @@ export default React.forwardRef<HTMLDivElement, ByteProps>(({ numberValue, motio
         
         return (v: PointerEvent) => {
             // TODO: fix awful position hack
-            setIndicators([...baseIndicators,<AnimatedBaseIndicator expo={7-i} neg={numberValue.value & (0b10000000 >> i) ? true : false} style={{position:'absolute', marginLeft: '700px', marginTop:'20px'}}/>])
+            setIndicators([...baseIndicators,<AnimatedBaseIndicator key={`binary-byte-${(new Date()).getTime()}`} expo={7-i} neg={numberValue.value & (0b10000000 >> i) ? true : false} style={{position:'absolute', marginLeft: '700px', marginTop:'20px'}}/>])
 
             numberValue.value ^= 0b10000000 >> i;
         }
@@ -76,8 +76,8 @@ export default React.forwardRef<HTMLDivElement, ByteProps>(({ numberValue, motio
             >
                 {baseIndicators}
             { /* note: I hate this so much its not dynamic but im so hungry rn that ill fix it later  */}
-                <h1 style={{position:'absolute', marginLeft: '650px', marginTop:'20px'}} className='smooth-byte-counter'><SmoothValue value={numberValue} /></h1>
-                {byteTable.value.map((bit, i) => <Binary state={bit} onTap={onClick(i)} readonly={readonly} stagger={i} />)}
+                <h1 key={"smooth-value-viewer"} style={{position:'absolute', marginLeft: '650px', marginTop:'20px'}} className='smooth-byte-counter'><SmoothValue value={numberValue} /></h1>
+                {byteTable.value.map((bit, i) => <Binary state={bit} onTap={onClick(i)} readonly={readonly} stagger={i} key={`binary-byte-${i}`} />)}
             </motion.div>
             
         </>

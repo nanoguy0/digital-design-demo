@@ -16,10 +16,10 @@ const variants: Variants = {
     'byte-hidden': { opacity: 0, y: 20 },
     'byte-visible': { opacity: 1, y: 0 },
     'byte-hover': { scale: 1.05 },
-    'byte-tap': { scale: 0.8, fontSize: 40 }
+    'byte-tap': { scale: 0.8, fontSize: '40px' }
 };
 
-export default React.forwardRef<HTMLDivElement, BinaryProps>(({ state, motionProps, readonly, onTap, stagger, ...props }: BinaryProps, ref) => {
+export default React.forwardRef<HTMLDivElement, BinaryProps>(({ state, motionProps, readonly, onTap, stagger, ...props }: BinaryProps & React.Attributes, ref) => {
     return (
         <motion.div
             className='binary-bit'
@@ -39,7 +39,7 @@ export default React.forwardRef<HTMLDivElement, BinaryProps>(({ state, motionPro
             onTapStart={onTap}
             variants={variants}
             {...motionProps}
-            
+            key={props.key}
         >
             {state ? "1" : "0"}
         </motion.div>

@@ -30,7 +30,6 @@ export default ({ map, ...props }: { map: TimelineItem[] }) => {
         // normalize 
         let anchorTop = anchor.current?.getBoundingClientRect().top! + window.scrollY;
         let percentage = anchorTop / lastAnchor;
-        console.log(anchorTop)
         let percentageToNearestFive = Math.round(percentage * 20) / 20;
         return { percentage: percentageToNearestFive + scrollYProgress.get(), anchor, ...timelineItem } as TimelineItemWithPercentage;
     });
