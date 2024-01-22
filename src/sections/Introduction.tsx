@@ -1,10 +1,11 @@
+import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap"
 import { MarkDownCard } from "../components/Cards"
 import content from "./data/Introduction.json"
 
-export default ({ onStart }: {onStart: () => void}) => {
+export default React.forwardRef<HTMLDivElement, {onStart: () => void}>(({ onStart } , ref) => {
     return (
-        <Container fluid style={{ marginBottom: "90vh" }}>
+        <Container fluid style={{ marginBottom: "90vh" }} ref={ref}>
             <Row>
                 <Col md={3}></Col>
                 <Col style={{alignItems:'center'}}>
@@ -15,4 +16,4 @@ export default ({ onStart }: {onStart: () => void}) => {
             </Row>
         </Container>
     )
-}
+});

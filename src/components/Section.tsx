@@ -4,7 +4,7 @@ import CenteredRow from "./CenteredRow";
 
 export default React.forwardRef(({ onNext, ...props }: { onNext: () => void } & React.PropsWithChildren, ref) => {
     return (
-        <Container fluid style={{ marginBottom: "90vh" }}>
+        <Container fluid style={{ marginBottom: "100vh" }}>
             <Row ref={ref} style={{ display: 'hidden' }} />
 
             {props.children}

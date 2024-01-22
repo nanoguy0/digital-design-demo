@@ -1,16 +1,6 @@
 import { motion, useScroll } from "framer-motion"
 import { Col, Container, Row } from "react-bootstrap"
 
-const NavBarMap = () => {
-
-
-
-    return (
-        <Row style={{ width: '100%', height: '5em' }} className="d-flex justify-content-around" fluid>
-
-        </Row>
-    )
-}
 
 
 export default ({ ...props }) => {
@@ -20,8 +10,7 @@ export default ({ ...props }) => {
         <Container fluid>
             <motion.div className="progress-bar" style={{ scaleX: scrollYProgress }} />
             <Row >
-                <NavBarMap />
-                <Col style={{ marginTop: '2em', marginBottom: '5em' }} className="d-flex justify-content-center">
+                <Col style={{ marginTop: '7em', marginBottom: '5em' }} className="d-flex justify-content-center">
                     <div />
                     <div />
                     <motion.h1

@@ -6,8 +6,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(36,36,36);
+  background-color: rgb(36, 36, 36);
+  /* very cool gradient but I don't think it fits */ 
+  /* background: hsla(205, 46%, 10%, 1);
+  background: linear-gradient(90deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
+  background: -moz-linear-gradient(90deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
+  background: -webkit-linear-gradient(90deg, hsla(205, 46%, 10%, 1) 0%, hsla(191, 28%, 23%, 1) 50%, hsla(207, 41%, 27%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#0E1C26", endColorstr="#2A454B", GradientType=1); */
   margin: 2em;
+  scroll-behavior: smooth;
 }
 
 .card {
@@ -38,6 +45,7 @@ h2::after {
 .col {
   margin: 1em;
 }
+
 .row {
   margin-bottom: 5em;
 }
@@ -46,10 +54,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .col-centered {
-  align-items:center !important;
-  justify-content:center !important;
-  display:flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  display: flex !important;
 }
 
 .progress-bar {
